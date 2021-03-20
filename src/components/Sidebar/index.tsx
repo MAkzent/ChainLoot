@@ -61,12 +61,12 @@ const Sidebar = () => {
       inactiveIcon: 'falUser',
       name: 'Account',
     },
-    {
-      path: 'https://www.notion.so/niftyarena/Nifty-Arena-bfcc39478cab46399d44e9a1c5940b85',
-      activeIcon: 'fasLightbulb',
-      inactiveIcon: 'falLightbulb',
-      name: 'How To Play',
-    },
+    // {
+    //   path: 'https://www.notion.so/niftyarena/Nifty-Arena-bfcc39478cab46399d44e9a1c5940b85',
+    //   activeIcon: 'fasLightbulb',
+    //   inactiveIcon: 'falLightbulb',
+    //   name: 'How To Play',
+    // },
   ];
 
   const isActive = (path: string) => {
