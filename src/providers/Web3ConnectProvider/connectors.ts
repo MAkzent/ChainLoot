@@ -17,7 +17,7 @@ const RPC_URLS: { [chainId: number]: string } = {
 export const injected = new InjectedConnector({ supportedChainIds: [1, 3, 4, 5, 42] });
 
 export const walletconnect = new WalletConnectConnector({
-  rpc: { 1: RPC_URLS[1] },
+  rpc: { 42: RPC_URLS[42] },
   bridge: 'https://bridge.walletconnect.org',
   qrcode: true,
   pollingInterval: POLLING_INTERVAL,
@@ -26,7 +26,7 @@ export const walletconnect = new WalletConnectConnector({
 export const magic = ({ email }: MagicProviderInfo) => {
   return new MagicConnector({
     apiKey: process.env.NEXT_PUBLIC_MAGIC_API_KEY as string,
-    chainId: 1,
+    chainId: 42,
     email,
   });
 };

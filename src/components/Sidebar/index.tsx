@@ -54,21 +54,6 @@ const Sidebar = () => {
     },
   ];
 
-  const SUB_ROUTES = [
-    {
-      path: '/me',
-      activeIcon: 'fasUser',
-      inactiveIcon: 'falUser',
-      name: 'Account',
-    },
-    // {
-    //   path: 'https://www.notion.so/niftyarena/Nifty-Arena-bfcc39478cab46399d44e9a1c5940b85',
-    //   activeIcon: 'fasLightbulb',
-    //   inactiveIcon: 'falLightbulb',
-    //   name: 'How To Play',
-    // },
-  ];
-
   const isActive = (path: string) => {
     if (path === '/') {
       return router.pathname === path;
@@ -113,12 +98,12 @@ const Sidebar = () => {
               </div>
             </div>
           )}
-          <AppLink
+          {/* <AppLink
             className={cn([style.links__link, style.noOpacity])}
             href={'https://www.notion.so/niftyarena/Nifty-Arena-bfcc39478cab46399d44e9a1c5940b85'}>
             <FontAwesomeIcon icon='falLightbulb' />
             Documentation
-          </AppLink>
+          </AppLink> */}
         </div>
       </div>
     </div>
