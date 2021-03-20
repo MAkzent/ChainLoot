@@ -30,6 +30,15 @@
     &__token {
       @extend %row;
       justify-content: space-between;
+      &__balance {
+        @extend %row;
+        button {
+          margin-left: 1rem;
+          font-size: 0.75rem;
+          padding: 0.25rem 0.5rem;
+          @extend %btn-secondary;
+        }
+      }
     }
   }
 }

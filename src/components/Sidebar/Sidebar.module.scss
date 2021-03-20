@@ -1,7 +1,7 @@
 @import 'styles/_variables.scss';
 
 .sidebar {
-  position: relative;
+  position: fixed;
   padding: 3rem 2rem;
   background-color: $color-codgray;
   height: 100%;

@@ -5,6 +5,7 @@ import { INFTInfos, particleId } from 'types';
 import useWeb3Interaction from 'hooks/useWeb3Interaction';
 import { useState } from 'react';
 import Modal from 'components/Modal';
+import experiences from 'lib/experiences.json';
 
 const Memberships = () => {
   const TIERS = Object.keys(nftInfos).map(number => (nftInfos as INFTInfos)[number]);
@@ -38,11 +39,11 @@ const Memberships = () => {
               <p>{tier.name}</p>
               <span>$ {tier.price}</span>
             </div>
-            <div className={styles.perks}>
+            {/* <div className={styles.perks}>
               <span>- Discord Role</span>
               <span>- Shop Discounts</span>
               <span>- Offline Experiences</span>
-            </div>
+            </div> */}
             <div className={styles.xp}>
               <div className={styles.xp__bars}>
                 {Array.from(Array(Math.floor(tier.xp / 1000) + 1).keys()).map(index => (
@@ -54,6 +55,14 @@ const Memberships = () => {
             <button onClick={() => handleBuy(tier.id as particleId)}>Buy Membership</button>
           </div>
         ))}
+      </div>
+      <div className={styles.headline}>Unlockable Experiences</div>
+      <div className={styles.headline}>
+        <div className={styles.experiences}>
+          {experiences?.list.map(() => (
+            <div className={styles.experiences__experience}></div>
+          ))}
+        </div>
       </div>
       <Modal isOpen={showApproveModal} onClose={() => setShowApproveModal(false)} header='Approve DAI'>
         <div className={styles.approve}>

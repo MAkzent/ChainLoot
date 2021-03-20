@@ -9,15 +9,28 @@ import useWeb3Interaction from 'hooks/useWeb3Interaction';
 const Wallet = () => {
   const { account } = useWeb3React();
   const { daiBalance, ethBalance, loaded } = useWeb3Interaction();
+  const [showBalance, setShowBalance] = useState(false);
 
   const buyDai = () => {
     new RampInstantSDK({
       hostAppName: 'Chain Loot',
       hostLogoUrl: 'https://i.pinimg.com/originals/8b/c5/14/8bc51478525c42e2a556ee5fec169a1d.png',
-      swapAmount: '50000000000000000000', // 500 DAI in wei
       swapAsset: 'DAI',
       userAddress: `${account}`,
     }).show();
+  };
+
+  const buyEth = () => {
+    new RampInstantSDK({
+      hostAppName: 'Chain Loot',
+      hostLogoUrl: 'https://i.pinimg.com/originals/8b/c5/14/8bc51478525c42e2a556ee5fec169a1d.png',
+      swapAsset: 'ETH',
+      userAddress: `${account}`,
+    }).show();
+  };
+
+  const toggleBalance = () => {
+    showBalance ? setShowBalance(false) : setShowBalance(true);
   };
 
   const MEMBERSHIPS = [
@@ -57,17 +70,27 @@ const Wallet = () => {
       <div className={styles.container}>
         <div className={styles.balances__header}>
           <span>Balances</span>
-          <button onClick={buyDai}>Buy DAI</button>
+          <button onClick={toggleBalance}>{showBalance ? 'Hide' : 'Show'}</button>
         </div>
         <div className={styles.balances__tokens}>
-          <div className={styles.balances__tokens__token}>
-            <span>DAI</span>
-            <span>$ {loaded ? daiBalance : '...loading'}</span>
-          </div>
-          <div className={styles.balances__tokens__token}>
-            <span>ETH</span>
-            <span>Ξ {loaded ? ethBalance : '...loading'}</span>
-          </div>
+          {showBalance && (
+            <>
+              <div className={styles.balances__tokens__token}>
+                <span>DAI</span>
+                <div className={styles.balances__tokens__token__balance}>
+                  <span>$ {loaded ? daiBalance : '...loading'}</span>
+                  <button onClick={buyDai}>Buy DAI</button>
+                </div>
+              </div>
+              <div className={styles.balances__tokens__token}>
+                <span>ETH</span>
+                <div className={styles.balances__tokens__token__balance}>
+                  <span>Ξ {loaded ? ethBalance : '...loading'}</span>
+                  <button onClick={buyEth}>Buy ETH</button>
+                </div>
+              </div>
+            </>
+          )}
         </div>
         <div className={styles.nfts}>Your Memberships</div>
         <div className={styles.nfts__list}>

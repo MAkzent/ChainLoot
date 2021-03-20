@@ -1,7 +1,7 @@
 @import 'styles/_variables.scss';
 
 .headline {
-  padding: 2rem 0;
+  padding: 2rem 0 1rem;
   font-weight: 500;
   font-size: 1.2rem;
 }
@@ -9,14 +9,14 @@
 .tiers {
   @extend %row;
   justify-content: flex-start;
-  margin-top: 2rem;
+  margin-top: 1rem;
 
   &__tier + &__tier {
     margin-left: 6rem;
   }
 
   &__tier {
-    width: 13rem;
+    width: 14rem;
     p {
       margin: 0.5rem 0;
       font-size: 1rem;
@@ -61,7 +61,7 @@
     }
 
     button {
-      margin-top: 2rem;
+      margin: 2rem 0;
       width: 100%;
       @extend %btn-primary;
     }
@@ -82,7 +82,7 @@
 .xp {
   @extend %row;
   justify-content: space-between;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   background-color: rgba($color-codgray, 0.5);
   padding: 0.75rem 1rem;
   border-radius: 0.25rem;
@@ -108,6 +108,19 @@
   button {
     @extend %btn-primary;
     margin-top: 2rem;
+  }
+}
+
+.experiences {
+  display: flex;
+  &__experience + &__experience {
+    margin-left: 3rem;
+  }
+  &__experience {
+    width: 12rem;
+    height: 12rem;
+    background-color: lighten($color-mineshaft, 5);
+    border-radius: 0.25rem;
   }
 }
 
