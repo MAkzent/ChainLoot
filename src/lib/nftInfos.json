@@ -9,7 +9,7 @@
   },
   "1": {
     "id": 1,
-    "name": "Common",
+    "name": "Epic",
     "image": "/images/mask-1.png",
     "price": 200,
     "xp": 2000,
@@ -17,7 +17,7 @@
   },
   "2": {
     "id": 2,
-    "name": "Common",
+    "name": "Legendary",
     "image": "/images/mask-2.png",
     "price": 500,
     "xp": 5000,
