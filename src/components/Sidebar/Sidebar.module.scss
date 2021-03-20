@@ -1,0 +1,122 @@
+@import 'styles/_variables.scss';
+
+.sidebar {
+  position: relative;
+  padding: 3rem 2rem;
+  background-color: $color-codgray;
+  height: 100%;
+
+  &__inner {
+    @extend %col;
+    height: 100%;
+    margin: 0 auto;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    &__top {
+      width: 100%;
+    }
+  }
+}
+
+.logo {
+  @extend %row;
+  justify-content: flex-start;
+  padding: 1rem;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 500;
+
+  &__minimized {
+    justify-content: center;
+  }
+
+  svg {
+    color: $color-melrose;
+    height: 1.4rem;
+    width: 1.4rem;
+  }
+
+  svg + span {
+    margin-left: 0.5rem;
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 3rem;
+
+  &__link + &__link {
+    margin-top: 0.75rem;
+  }
+
+  &__link {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 0.3rem;
+    line-height: 0.2rem;
+    align-items: center;
+    opacity: 0.7;
+    font-size: 0.9rem;
+    transition: 0.2s background-color ease-in-out;
+
+    &__minimized {
+      grid-template-columns: auto;
+      justify-items: center;
+    }
+
+    &:hover {
+      background-color: rgba($color-mineshaft, 0.7);
+    }
+  }
+}
+
+.active {
+  color: $color-melrose;
+  opacity: 1;
+  background-color: $color-mineshaft;
+  &:hover {
+    background-color: $color-mineshaft;
+  }
+}
+
+.toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: rgba($color-melrose, 0.6);
+  font-size: 0.9rem;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+  &:hover {
+    color: rgba($color-melrose, 0.9);
+  }
+}
+
+.account {
+  line-height: 1rem;
+  &__name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: $color-melrose;
+  }
+  &__chain {
+    opacity: 0.7;
+    font-size: 0.6rem;
+  }
+}
+
+.noHover {
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.noOpacity {
+  opacity: 1;
+}

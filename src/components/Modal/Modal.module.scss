@@ -1,0 +1,17 @@
+@import 'styles/_variables.scss';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close {
+  cursor: pointer;
+}
+
+.header {
+  font-weight: 500;
+  line-height: 1.6rem;
+  padding-bottom: 1rem;
+}

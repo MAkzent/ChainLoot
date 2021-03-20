@@ -1,0 +1,155 @@
+$body-max-width: 960px;
+$sidebar-max-width: 320px;
+$sidebar-min-width: 250px;
+$battle-max-width: 1050px;
+
+$font-mono: 'Source Code Pro', monospace;
+
+$colors: (
+  white:        #fff,
+  wildsand:     #f5f4f4,
+  melrose:      #a7b2ff,
+  codgray:      #151515,
+  mineshaft:    #252525,
+  bittersweet:  #FF7675,
+  yellowsin:    #ffd369,
+  gossip:       #C9F6B4,
+  loot:         #55efc4,
+  spray:        #81ECEC,
+  thunder:      #33282E,
+  eggplant:     #563C55,
+);
+
+$color-white: map-get($colors, white);
+$color-melrose: map-get($colors, melrose);
+$color-codgray: map-get($colors, codgray);
+$color-mineshaft: map-get($colors, mineshaft);
+$color-bittersweet: map-get($colors, bittersweet);
+$color-wildsand: map-get($colors, wildsand);
+$color-yellowsin: map-get($colors, yellowsin);
+$color-gossip: map-get($colors, gossip);
+$color-thunder: map-get($colors, thunder);
+$color-eggplant: map-get($colors, eggplant);
+$color-loot: map-get($colors, loot);
+$color-spray: map-get($colors, spray);
+
+// Lighten / Darken Variations
+$color-codgray--light: lighten($color-codgray, 10);
+
+// Opacity Variations
+$color-wildsand--70: rgba($color-wildsand, 0.7);
+$color-wildsand--50: rgba($color-wildsand, 0.5);
+
+$color-melrose--30: rgba($color-melrose, 0.3);
+
+// convenience
+%row {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  align-items: center;
+}
+
+%col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+//
+%btn-primary {
+  display: inline-block;
+  color: $color-mineshaft;
+  background-color: $color-melrose;
+  padding: 0.5rem 1rem;
+  border-radius: 0.35rem;
+  border: 1px solid $color-melrose;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-0.03rem);
+    background-color: lighten($color-melrose, 3);
+    box-shadow: 0 1px 2px rgba($color-melrose, 0.2);
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.7;
+  }
+}
+
+%btn-secondary {
+  display: inline-block;
+  color: $color-melrose;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 0.35rem;
+  border: 1px solid $color-melrose;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-0.03rem);
+    color: lighten($color-melrose, 3);
+    box-shadow: 0 1px 2px rgba($color-melrose, 0.2);
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.7;
+  }
+}
+
+%container {
+  background-color: $color-codgray--light;
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+}
+
+%input-field {
+  color: white;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  background-color: $color-mineshaft;
+  transition: 0.2s ease-in-out;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid rgba($color-melrose, 0);
+  &:focus, textarea:focus, select:focus{
+    outline: none;
+    border: 1px solid $color-melrose;
+  }
+}
+
+// mixins
+@mixin breakpoint($class) {
+  @if $class == xs {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $class == sm {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $class == md {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $class == lg {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg";
+  }
+}

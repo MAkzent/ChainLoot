@@ -1,0 +1,18 @@
+@import 'styles/_variables.scss';
+
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.sidebar {
+  box-sizing: content-box;
+  height: 100vh;
+}
+
+.body {
+  // width: $body-max-width;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 4rem;
+}

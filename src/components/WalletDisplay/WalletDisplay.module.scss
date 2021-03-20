@@ -1,0 +1,34 @@
+@import 'styles/_variables.scss';
+
+.button {
+  @extend %btn-primary;
+}
+
+.container {
+  margin-top: 1rem;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+
+  button {
+    @extend %btn-primary;
+  }
+}
+
+.input {
+  &__header {
+    font-weight: 500;
+    padding: 2rem 0 1rem;
+  }
+  &__wrapper {
+    display: flex;
+
+    input {
+      margin-right: 1rem;
+      @extend %input-field;
+    }
+    button {
+      @extend %btn-primary;
+    }
+  }
+}

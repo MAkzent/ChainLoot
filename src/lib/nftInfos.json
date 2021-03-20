@@ -1,0 +1,26 @@
+{
+  "0": {
+    "id": 0,
+    "name": "Common",
+    "image": "/images/mask-0.png",
+    "price": 50,
+    "xp": 300,
+    "uri": "https://ipfs.io/ipfs/QmbdK4gyfowkSJtcooaUWLbvXmuT3MmNAwkmzD1TtKJ9Hw"
+  },
+  "1": {
+    "id": 1,
+    "name": "Common",
+    "image": "/images/mask-1.png",
+    "price": 200,
+    "xp": 2000,
+    "uri": "https://ipfs.io/ipfs/QmbdK4gyfowkSJtcooaUWLbvXmuT3MmNAwkmzD1TtKJ9Hw"
+  },
+  "2": {
+    "id": 2,
+    "name": "Common",
+    "image": "/images/mask-2.png",
+    "price": 500,
+    "xp": 5000,
+    "uri": "https://ipfs.io/ipfs/QmbdK4gyfowkSJtcooaUWLbvXmuT3MmNAwkmzD1TtKJ9Hw"
+  }
+}

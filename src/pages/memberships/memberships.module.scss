@@ -1,0 +1,152 @@
+@import 'styles/_variables.scss';
+
+.headline {
+  padding: 2rem 0;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.tiers {
+  @extend %row;
+  justify-content: flex-start;
+  margin-top: 2rem;
+
+  &__tier + &__tier {
+    margin-left: 6rem;
+  }
+
+  &__tier {
+    width: 13rem;
+    p {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+      font-weight: 500;
+      display: inline-block;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 0 0 rgba($color-melrose, 1);
+    }
+
+    &--0 {
+      p {
+        color: $color-spray;
+      }
+      img {
+        animation: pulseCommon 2s infinite;
+      }
+    }
+    &--1 {
+      p {
+        color: $color-yellowsin;
+      }
+      img {
+        animation: pulseEpic 2s infinite;
+      }
+    }
+    &--2 {
+      p {
+        color: $color-melrose;
+      }
+      img {
+        animation: pulseLegen 2s infinite;
+      }
+    }
+
+    &__footer {
+      @extend %row;
+      justify-content: space-between;
+    }
+
+    button {
+      margin-top: 2rem;
+      width: 100%;
+      @extend %btn-primary;
+    }
+  }
+}
+
+.perks {
+  margin-top: 1rem;
+  background-color: rgba($color-codgray, 0.5);
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  display: grid;
+  grid-gap: 0.5rem;
+  font-size: 0.8rem;
+  font-family: $font-mono;
+}
+
+.xp {
+  @extend %row;
+  justify-content: space-between;
+  margin-top: 1rem;
+  background-color: rgba($color-codgray, 0.5);
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  font-family: $font-mono;
+  span {
+    margin-left: 0.25rem;
+    font-size: 0.8rem;
+  }
+  &__bars {
+    @extend %row;
+  }
+  &__bar {
+    height: 0.7rem;
+    border-left: 3px solid $color-melrose;
+    margin-right: 0.25rem;
+  }
+}
+
+.approve {
+  @extend %col;
+  margin-top: 1rem;
+  height: 100%;
+  button {
+    @extend %btn-primary;
+    margin-top: 2rem;
+  }
+}
+
+@keyframes pulseCommon {
+  0% {
+    box-shadow: 0 0 0 0 rgba($color-spray, 0.4);
+  }
+
+  40% {
+    box-shadow: 0 0 0 10px rgba($color-spray, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba($color-spray, 0);
+  }
+}
+@keyframes pulseEpic {
+  0% {
+    box-shadow: 0 0 0 0 rgba($color-yellowsin, 0.4);
+  }
+
+  60% {
+    box-shadow: 0 0 0 10px rgba($color-yellowsin, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba($color-yellowsin, 0);
+  }
+}
+@keyframes pulseLegen {
+  0% {
+    box-shadow: 0 0 0 0 rgba($color-melrose, 0.4);
+  }
+
+  80% {
+    box-shadow: 0 0 0 10px rgba($color-melrose, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba($color-melrose, 0);
+  }
+}

@@ -1,0 +1,19 @@
+@import 'styles/_variables.scss';
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  padding: 6rem 4rem 3rem;
+  margin: -2rem -4rem 0;
+
+  &__inner {
+    background-color: rgba($color-mineshaft, 0.7);
+    border: 1px solid $color-mineshaft;
+    padding: 1rem 2.5rem;
+    border-radius: 0.75rem;
+  }
+
+  &__title {
+    font-size: 1.6rem;
+  }
+}

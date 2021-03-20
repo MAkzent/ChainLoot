@@ -1,0 +1,134 @@
+@import 'styles/_variables.scss';
+
+.headline {
+  padding: 2rem 0;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.balances {
+  &__header {
+    @extend %row;
+    justify-content: space-between;
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding: 2rem 0 1rem;
+    max-width: 25rem;
+    button {
+      @extend %btn-primary;
+    }
+  }
+
+  &__tokens {
+    display: grid;
+    background-color: $color-codgray;
+    border-radius: 0.25rem;
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+    width: 100%;
+    max-width: 25rem;
+    &__token {
+      @extend %row;
+      justify-content: space-between;
+    }
+  }
+}
+
+.nfts {
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding: 2rem 0 1rem;
+
+  &__list {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+    &__item {
+      width: 11rem;
+      position: relative;
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 0 0 rgba($color-melrose, 1);
+      }
+
+      &--0 {
+        p {
+          color: $color-spray;
+        }
+        img {
+          animation: pulseCommon 2s infinite;
+        }
+      }
+      &--1 {
+        p {
+          color: $color-yellowsin;
+        }
+        img {
+          animation: pulseEpic 2s infinite;
+        }
+      }
+      &--2 {
+        p {
+          color: $color-melrose;
+        }
+        img {
+          animation: pulseLegen 2s infinite;
+        }
+      }
+
+      &__xp {
+        position: absolute;
+        bottom: 1rem;
+        right: -1rem;
+        background-color: $color-codgray;
+        padding: 0.5rem 0.75rem;
+        border-radius: 0.5rem;
+        font-size: 0.7rem;
+        font-family: $font-mono;
+        border: 1px solid $color-melrose;
+      }
+    }
+  }
+}
+
+@keyframes pulseCommon {
+  0% {
+    box-shadow: 0 0 0 0 rgba($color-spray, 0.4);
+  }
+
+  40% {
+    box-shadow: 0 0 0 10px rgba($color-spray, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba($color-spray, 0);
+  }
+}
+@keyframes pulseEpic {
+  0% {
+    box-shadow: 0 0 0 0 rgba($color-yellowsin, 0.4);
+  }
+
+  60% {
+    box-shadow: 0 0 0 10px rgba($color-yellowsin, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba($color-yellowsin, 0);
+  }
+}
+@keyframes pulseLegen {
+  0% {
+    box-shadow: 0 0 0 0 rgba($color-melrose, 0.4);
+  }
+
+  80% {
+    box-shadow: 0 0 0 10px rgba($color-melrose, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba($color-melrose, 0);
+  }
+}
