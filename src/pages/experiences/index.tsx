@@ -9,7 +9,11 @@ const Experiences = () => {
   const { myAssets } = useWeb3Interaction();
 
   const renderSeeAll = () => {
-    return <div className={styles.placeholder}>See All Memberships</div>;
+    return (
+      <AppLink href='/memberships' className={styles.placeholder}>
+        Show All Memberships
+      </AppLink>
+    );
   };
   return (
     <div>

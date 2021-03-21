@@ -113,15 +113,43 @@
 
 .experiences {
   display: flex;
+  align-items: center;
   &__experience + &__experience {
     margin-left: 3rem;
   }
   &__experience {
-    width: 12rem;
-    height: 12rem;
     background-color: lighten($color-mineshaft, 5);
     border-radius: 0.25rem;
+    padding: 1rem;
+    margin-right: 3rem;
+
+    img {
+      height: 9rem;
+      width: auto;
+      border-radius: 0.5rem;
+    }
+
+    &__title {
+      font-size: 0.9rem;
+      padding: 0.5rem 0;
+      font-weight: normal;
+    }
+    &__xp {
+      font-size: 0.8rem;
+      font-weight: 300;
+      margin-top: 0.5rem;
+      background-color: $color-codgray;
+      padding: 0.5rem 0.75rem;
+      width: auto;
+      margin-right: 3rem;
+      border-radius: 0.5rem;
+    }
   }
+}
+
+.placeholder {
+  margin-left: 2rem;
+  @extend %btn-secondary;
 }
 
 @keyframes pulseCommon {

@@ -6,6 +6,7 @@ import useWeb3Interaction from 'hooks/useWeb3Interaction';
 import { useState } from 'react';
 import Modal from 'components/Modal';
 import experiences from 'lib/experiences.json';
+import AppLink from 'components/AppLink';
 
 const Memberships = () => {
   const TIERS = Object.keys(nftInfos).map(number => (nftInfos as INFTInfos)[number]);
@@ -26,6 +27,14 @@ const Memberships = () => {
   const onApprove = async () => {
     await approveDai();
     setShowApproveModal(false);
+  };
+
+  const renderSeeAll = () => {
+    return (
+      <AppLink href='/experiences' className={styles.placeholder}>
+        Show All Experiences
+      </AppLink>
+    );
   };
 
   return (
@@ -59,9 +68,22 @@ const Memberships = () => {
       <div className={styles.headline}>Unlockable Experiences</div>
       <div className={styles.headline}>
         <div className={styles.experiences}>
-          {experiences?.list.map(() => (
-            <div className={styles.experiences__experience}></div>
-          ))}
+          {experiences?.list.map((experience, index) => {
+            if (index < 3) {
+              return (
+                <div>
+                  <div className={styles.experiences__experience}>
+                    <img src={experience.image} />
+                  </div>
+                  <div className={styles.experiences__experience__title}>{experience.title}</div>
+                  <div className={styles.experiences__experience__xp}>{experience.cost} XP</div>
+                </div>
+              );
+            } else {
+              return null;
+            }
+          })}
+          {renderSeeAll()}
         </div>
       </div>
       <Modal isOpen={showApproveModal} onClose={() => setShowApproveModal(false)} header='Approve DAI'>

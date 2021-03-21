@@ -3,8 +3,10 @@
 .asset {
   @extend %row;
   img {
-    height: 8rem;
+    height: 6rem;
     width: auto;
+    border-radius: 1rem;
+    margin-right: 1rem;
   }
   &__info {
     &__headline {
@@ -23,8 +25,8 @@
   border-radius: 0.5rem;
   background-color: lighten($color-yellowsin, 20);
   position: relative;
-  height: 2rem;
-  width: 14rem;
+  height: 1.8rem;
+  width: 12rem;
   &__inner {
     position: absolute;
     top: 0;
@@ -37,6 +39,7 @@
   }
   &__text {
     color: black;
+    font-size: 0.9rem;
     font-family: $font-mono;
     position: absolute;
     padding: 0.5rem 1rem;

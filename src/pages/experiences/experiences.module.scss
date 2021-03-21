@@ -32,12 +32,15 @@
 
 .placeholder {
   margin-left: 2rem;
-  @extend %btn-primary;
+  @extend %btn-secondary;
 }
 
 .row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  grid-gap: 3rem;
   align-items: center;
+  margin-bottom: 2rem;
 }
 
 .container {

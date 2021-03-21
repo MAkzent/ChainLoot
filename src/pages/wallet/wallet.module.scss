@@ -49,7 +49,8 @@
   padding: 4rem 0 1rem;
 
   &__list {
-    grid-gap: 2rem;
+    margin-top: 1rem;
+    grid-gap: 4rem;
     display: flex;
     flex-wrap: wrap;
     &__buy {
