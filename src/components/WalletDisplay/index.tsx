@@ -14,7 +14,7 @@ const walletDisplay = () => {
   return (
     <div>
       <button className={styles.button} onClick={() => setShowWeb3ConnectModal(true)}>
-        Wallet Sign In
+        Fan Sign In
       </button>
 
       <Modal onClose={() => setShowWeb3ConnectModal(false)} isOpen={showWeb3ConnectModal} header={'Connect Wallet'}>

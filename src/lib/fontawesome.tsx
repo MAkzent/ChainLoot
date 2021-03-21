@@ -23,8 +23,9 @@ import { faUndoAlt as fasUndoAlt } from '@fortawesome/pro-solid-svg-icons/faUndo
 
 // far
 import { faBox as farBox } from '@fortawesome/pro-regular-svg-icons/faBox';
-import { faTimes as farTimes } from '@fortawesome/pro-regular-svg-icons/faTimes';
 import { faExclamationTriangle as farExclamationTriangle } from '@fortawesome/pro-regular-svg-icons/faExclamationTriangle';
+import { faTimes as farTimes } from '@fortawesome/pro-regular-svg-icons/faTimes';
+import { faSignOut as farSignOut } from '@fortawesome/pro-regular-svg-icons/faSignOut';
 
 // fal
 import { faArrowAltToRight as falArrowAltToRight } from '@fortawesome/pro-light-svg-icons/faArrowAltToRight';
@@ -57,8 +58,9 @@ export default {
   fasUser,
   fasUndoAlt,
   farBox,
-  farTimes,
   farExclamationTriangle,
+  farTimes,
+  farSignOut,
   falArrowAltToRight,
   falArrowAltToLeft,
   falBolt,

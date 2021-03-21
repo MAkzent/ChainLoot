@@ -10,7 +10,7 @@ import { chainToString } from 'hooks/useWeb3';
 const Sidebar = () => {
   const router = useRouter();
   const [ensName, setEnsName] = useState('');
-  const { account, chainId, library } = useWeb3React();
+  const { account, chainId, library, deactivate } = useWeb3React();
 
   useEffect(() => {
     if (account) {
@@ -101,6 +101,10 @@ const Sidebar = () => {
           <div className={style.creator}>
             <img src='/images/waffle.png' />
             <span>MrRoflWaffles</span>
+          </div>
+          <div onClick={deactivate} className={style.links__link}>
+            <FontAwesomeIcon icon='farSignOut' />
+            Logout
           </div>
           {/* <AppLink
             className={cn([style.links__link, style.noOpacity])}
