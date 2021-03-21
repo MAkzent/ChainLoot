@@ -1,0 +1,93 @@
+@import 'styles/_variables.scss';
+
+.headline {
+  padding: 2rem 0;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.explanation {
+  line-height: 1.6rem;
+}
+
+.hero {
+  @extend %row;
+  justify-content: space-between;
+}
+
+.waffles {
+  @extend %col;
+  margin: 2rem 2rem 2rem 6rem;
+  img {
+    height: 5rem;
+    width: 5rem;
+  }
+  span {
+    @extend %col;
+    text-align: center;
+    padding: 0.5rem 2rem;
+  }
+  &__links {
+    margin-top: 2rem;
+    display: grid;
+    grid-gap: 1rem;
+    button {
+      @extend %btn-primary;
+      @extend %btn-primary--waffle;
+    }
+  }
+}
+
+.title {
+  padding: 2rem 0;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.updates {
+  display: flex;
+  align-items: center;
+  &__update {
+    @extend %col;
+    margin-right: 3rem;
+    background-color: $color-woodsmoke;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem 1.25rem;
+    font-size: 0.9rem;
+    transition: 0.2s ease-in-out;
+    text-align: center;
+    line-height: 1.4rem;
+    box-shadow: 4px 4px 6px black;
+    max-width: 18rem;
+
+    img {
+      height: 12rem;
+      width: auto;
+      border-radius: 0.25rem;
+      padding: 0.5rem 0 1rem;
+    }
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+}
+
+.buy {
+  @extend %row;
+  justify-content: flex-start;
+  border-left: 4px solid $color-loot;
+  padding: 1rem;
+  font-weight: 500;
+  background-color: $color-codgray;
+  margin-bottom: 2rem;
+  width: auto;
+  transition: 0.1s ease-in-out;
+  svg {
+    margin-right: 0.75rem;
+    color: $color-loot;
+  }
+  &:hover {
+    margin-left: 0.5rem;
+  }
+}

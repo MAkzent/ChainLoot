@@ -64,7 +64,7 @@ const Wallet = () => {
         <div className={styles.nfts}>Your Memberships</div>
         <div className={styles.nfts__list}>
           {myAssets.length ? (
-            myAssets.map(asset => <NFT asset={asset} />)
+            myAssets.map((asset, index) => <NFT key={index} asset={asset} />)
           ) : (
             <div className={styles.nfts__list__buy}>
               <span>Looks like you're not a member yet.</span>

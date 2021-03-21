@@ -25,7 +25,7 @@ const index = ({ experience }: IExperienceCard) => {
   const [selectedNFT, setSelectedNFT] = useState<IProton>();
   const { myAssets } = useWeb3Interaction();
   const { library } = useWeb3React();
-  const maxCurrentXp = 1200;
+  const maxCurrentXp = myAssets.length ? 1200 : 0;
   const redeem = (experience: IExperience) => {
     setSelectedExperience(experience);
     setShowConfirmModal(true);

@@ -98,13 +98,13 @@ const Sidebar = () => {
               </div>
             </div>
           )}
+          <div onClick={deactivate} className={cn(style.links__link, style.logout)}>
+            <FontAwesomeIcon icon='farSignOut' />
+            Logout
+          </div>
           <div className={style.creator}>
             <img src='/images/waffle.png' />
             <span>MrRoflWaffles</span>
-          </div>
-          <div onClick={deactivate} className={style.links__link}>
-            <FontAwesomeIcon icon='farSignOut' />
-            Logout
           </div>
           {/* <AppLink
             className={cn([style.links__link, style.noOpacity])}

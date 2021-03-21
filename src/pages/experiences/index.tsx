@@ -23,7 +23,7 @@ const Experiences = () => {
           <div className={styles.row}>
             {myAssets.map((asset, index) => {
               if (index < 2) {
-                return <NFT key={index} asset={asset} />;
+                return <NFT key={asset.id} asset={asset} />;
               }
               return null;
             })}
@@ -36,8 +36,8 @@ const Experiences = () => {
           </div>
         )}
         <div className={styles.container}>
-          {experiences?.list.map((experience, index) => (
-            <ExperienceCard key={index} experience={experience} />
+          {experiences?.list.map(experience => (
+            <ExperienceCard key={experience.title} experience={experience} />
           ))}
         </div>
       </div>
