@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useWeb3React } from '@web3-react/core';
 import { connectorList, magic } from 'providers/Web3ConnectProvider/connectors';
 import { chainToString } from 'hooks/useWeb3';

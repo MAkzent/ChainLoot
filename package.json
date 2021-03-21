@@ -29,6 +29,7 @@
     "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "ethers": "^5.0.19",
+    "graphql-request": "^3.4.0",
     "humps": "^2.0.1",
     "next": "^10.0.0",
     "next-images": "^1.6.2",

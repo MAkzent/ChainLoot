@@ -1,0 +1,47 @@
+@import 'styles/_variables.scss';
+
+.asset {
+  @extend %row;
+  img {
+    height: 8rem;
+    width: auto;
+  }
+  &__info {
+    &__headline {
+      font-size: 1.15rem;
+      font-weight: 500;
+      padding-bottom: 1rem;
+    }
+    &__discription {
+      opacity: 0.8;
+      padding: 0.5rem 0 1rem;
+    }
+  }
+}
+
+.xp {
+  border-radius: 0.5rem;
+  background-color: lighten($color-yellowsin, 20);
+  position: relative;
+  height: 2rem;
+  width: 14rem;
+  &__inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0.5rem;
+    height: 100%;
+    width: 80%; // change
+    background-color: $color-yellowsin;
+    z-index: 2;
+  }
+  &__text {
+    color: black;
+    font-family: $font-mono;
+    position: absolute;
+    padding: 0.5rem 1rem;
+    top: 0;
+    left: 0;
+    z-index: 3;
+  }
+}

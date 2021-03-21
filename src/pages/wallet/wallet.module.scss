@@ -10,7 +10,7 @@
   &__header {
     @extend %row;
     justify-content: space-between;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     font-weight: 500;
     padding: 2rem 0 1rem;
     max-width: 25rem;
@@ -22,7 +22,7 @@
   &__tokens {
     display: grid;
     background-color: $color-codgray;
-    border-radius: 0.25rem;
+    border-radius: 0.3rem;
     padding: 1rem 1.5rem;
     gap: 1rem;
     width: 100%;
@@ -49,9 +49,21 @@
   padding: 2rem 0 1rem;
 
   &__list {
-    display: grid;
     grid-gap: 2rem;
-    grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    &__buy {
+      border-radius: 0.3rem;
+      background-color: $color-codgray;
+      padding: 1rem 1.25rem;
+      span {
+        font-style: italic;
+      }
+      a {
+        margin-left: 1rem;
+        @extend %btn-primary;
+      }
+    }
     &__item {
       width: 11rem;
       position: relative;

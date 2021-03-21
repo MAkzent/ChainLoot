@@ -5,10 +5,12 @@ import cn from 'classnames';
 import styles from './wallet.module.scss';
 import { RampInstantSDK } from '@ramp-network/ramp-instant-sdk';
 import useWeb3Interaction from 'hooks/useWeb3Interaction';
+import NFT from 'components/NFT';
+import AppLink from 'components/AppLink';
 
 const Wallet = () => {
   const { account } = useWeb3React();
-  const { daiBalance, ethBalance, loaded } = useWeb3Interaction();
+  const { daiBalance, ethBalance, loaded, myAssets } = useWeb3Interaction();
   const [showBalance, setShowBalance] = useState(false);
 
   const buyDai = () => {
@@ -33,36 +35,36 @@ const Wallet = () => {
     showBalance ? setShowBalance(false) : setShowBalance(true);
   };
 
-  const MEMBERSHIPS = [
-    {
-      name: 'Common',
-      image: '/images/mask-0.png',
-      price: '0.1',
-      xp: 500,
-      currentXp: 200,
-    },
-    {
-      name: 'Common',
-      image: '/images/mask-0.png',
-      price: '0.1',
-      xp: 500,
-      currentXp: 150,
-    },
-    {
-      name: 'Common',
-      image: '/images/mask-0.png',
-      price: '0.1',
-      xp: 500,
-      currentXp: 240,
-    },
-    {
-      name: 'Legendary',
-      image: '/images/mask-2.png',
-      price: '1',
-      xp: 5000,
-      currentXp: 2400,
-    },
-  ];
+  // const MEMBERSHIPS = [
+  //   {
+  //     name: 'Common',
+  //     image: '/images/mask-0.png',
+  //     price: '0.1',
+  //     xp: 500,
+  //     currentXp: 200,
+  //   },
+  //   {
+  //     name: 'Common',
+  //     image: '/images/mask-0.png',
+  //     price: '0.1',
+  //     xp: 500,
+  //     currentXp: 150,
+  //   },
+  //   {
+  //     name: 'Common',
+  //     image: '/images/mask-0.png',
+  //     price: '0.1',
+  //     xp: 500,
+  //     currentXp: 240,
+  //   },
+  //   {
+  //     name: 'Legendary',
+  //     image: '/images/mask-2.png',
+  //     price: '1',
+  //     xp: 5000,
+  //     currentXp: 2400,
+  //   },
+  // ];
 
   return (
     <div>
@@ -94,12 +96,20 @@ const Wallet = () => {
         </div>
         <div className={styles.nfts}>Your Memberships</div>
         <div className={styles.nfts__list}>
-          {MEMBERSHIPS.map((tier, index) => (
+          {myAssets.length ? (
+            myAssets.map(asset => <NFT asset={asset} />)
+          ) : (
+            <div className={styles.nfts__list__buy}>
+              <span>Looks like you're not a member yet.</span>
+              <AppLink href={'/memberships'}>Buy Membership</AppLink>
+            </div>
+          )}
+          {/* {MEMBERSHIPS.map((tier, index) => (
             <div className={cn([styles.nfts__list__item, styles[`nfts__list__item--${index}`]])} key={index}>
               <img src={tier.image} />
               <span className={styles.nfts__list__item__xp}>Current: {tier.currentXp} XP</span>
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
     </div>

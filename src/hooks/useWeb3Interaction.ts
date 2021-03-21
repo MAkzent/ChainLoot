@@ -13,6 +13,7 @@ const useWeb3Interaction = () => {
     approveDai,
     didApproveEnoughDai,
     daiApproved,
+    myAssets,
   } = useContext(Context);
   return {
     daiBalance,
@@ -24,6 +25,7 @@ const useWeb3Interaction = () => {
     approveDai,
     didApproveEnoughDai,
     daiApproved,
+    myAssets,
   };
 };
 

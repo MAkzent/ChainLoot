@@ -1,7 +1,8 @@
 import React, { useState, useEffect, createContext } from 'react';
 import { ethers, providers } from 'ethers';
 import { useWeb3React } from '@web3-react/core';
-import { particleId } from 'types';
+import { particleId, IProton } from 'types';
+import { getData } from 'services/subgraph';
 const daiAddresses = require('lib/daiAddress.json');
 const daiAbi = require('lib/abis/dai.json');
 const nftInfo = require('lib/nftInfos.json');
@@ -20,6 +21,7 @@ interface Web3ConnectProviderContext {
   approveDai: () => void;
   didApproveEnoughDai: (amount: number) => void;
   daiApproved: boolean;
+  myAssets: IProton[];
 }
 
 export const Context = createContext<Web3ConnectProviderContext>({
@@ -32,6 +34,7 @@ export const Context = createContext<Web3ConnectProviderContext>({
   approveDai: () => {},
   didApproveEnoughDai: () => {},
   daiApproved: false,
+  myAssets: [],
 });
 
 const Web3ConnectProvider: React.FC = ({ children }) => {
@@ -49,12 +52,25 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
   const [ethBalance, setEthBalance] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [daiApproved, setDaiApproved] = useState(false);
+  const [myAssets, setMyAssets] = useState([]);
 
   useEffect(() => {
     loadDaiBalance();
     loadEthBalance();
     loadApproveDai();
   }, [account, chainId]);
+
+  useEffect(() => {
+    if (account) {
+      loadAssets(account);
+    }
+  }, [account]);
+
+  const loadAssets = async (account: string) => {
+    const assets: any = await getData(account);
+
+    setMyAssets(assets);
+  };
 
   const loadDaiBalance = async () => {
     if (chainId && account) {
@@ -91,7 +107,7 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
     const signer = library.getSigner(account as string);
     const daiContract = new ethers.Contract(daiAddresses[chainId], daiAbi, signer);
     try {
-      await daiContract.approve(kovanAddresses.chargedParticles.address, ethers.utils.parseEther(String(10000000)));
+      await daiContract.approve(kovanAddresses.proton.address, ethers.utils.parseEther(String(10000000)));
     } catch (e) {
       console.error('error in approving dai:', e);
     }
@@ -104,7 +120,7 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
     const signer = library.getSigner(account as string);
     const daiContract = new ethers.Contract(daiAddresses[chainId], daiAbi, signer);
     try {
-      const approved = await daiContract.allowance(account, kovanAddresses.chargedParticles.address);
+      const approved = await daiContract.allowance(account, kovanAddresses.proton.address);
       return Math.round(Number(ethers.utils.formatUnits(approved, 18))) > value;
     } catch (e) {
       console.error('error in reading dai approval:', e);
@@ -119,19 +135,6 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
     const protonAddress = kovanAddresses.proton.address;
     const signer = library.getSigner(account as string);
     const protonContract = new ethers.Contract(protonAddress, protonAbi, signer);
-    console.log(protonAddress);
-
-    console.log({
-      creator: CREATOR,
-      account: account,
-      referrer: REFERRER,
-      metadataURI: nftInfo[id].uri,
-      walletManagerId: 'aave',
-      assetToken: daiAddresses[chainId],
-      assetAmount: ethers.utils.parseEther(String(nftInfo[id].price)),
-      annuityPercent: 100,
-    });
-    console.log(protonContract.createChargedParticle);
     // interface: https://docs.charged.fi/charged-particles-protocol/smart-contracts-documentation/contracts/proton-contract#createchargedparticle
     // todo: add a relayer contract (so that uri, price, percent is decided by creator)
     try {
@@ -142,8 +145,8 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
         nftInfo[id].uri,
         'aave',
         daiAddresses[chainId],
-        ethers.utils.parseEther(String(nftInfo[id].price)),
-        100
+        ethers.utils.parseEther(String(nftInfo[id].price).toString()).toString(),
+        '10000'
       );
       console.log(mintingTx);
     } catch (e) {
@@ -163,6 +166,7 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
         approveDai,
         didApproveEnoughDai,
         daiApproved,
+        myAssets,
       }}>
       {children}
     </Context.Provider>
