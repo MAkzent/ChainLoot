@@ -14,7 +14,7 @@ const Wallet = () => {
   const buyDai = () => {
     new RampInstantSDK({
       hostAppName: 'LootVault',
-      hostLogoUrl: 'https://i.pinimg.com/originals/8b/c5/14/8bc51478525c42e2a556ee5fec169a1d.png',
+      hostLogoUrl: 'https://lootvault.vercel.app/images/logo.png',
       swapAsset: 'DAI',
       userAddress: `${account}`,
     }).show();
@@ -23,7 +23,7 @@ const Wallet = () => {
   const buyEth = () => {
     new RampInstantSDK({
       hostAppName: 'LootVault',
-      hostLogoUrl: 'https://i.pinimg.com/originals/8b/c5/14/8bc51478525c42e2a556ee5fec169a1d.png',
+      hostLogoUrl: 'https://lootvault.vercel.app/images/logo.png',
       swapAsset: 'ETH',
       userAddress: `${account}`,
     }).show();

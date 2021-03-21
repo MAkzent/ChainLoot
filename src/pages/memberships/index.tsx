@@ -77,7 +77,7 @@ const Memberships = () => {
                     <img src={experience.image} />
                   </div>
                   <div className={styles.experiences__experience__title}>{experience.title}</div>
-                  <div className={styles.experiences__experience__xp}>{experience.cost} XP</div>
+                  <div className={styles.experiences__experience__xp}>{experience.cost.toLocaleString()} XP</div>
                 </div>
               );
             } else {
