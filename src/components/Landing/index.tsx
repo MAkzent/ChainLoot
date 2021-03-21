@@ -2,6 +2,7 @@ import style from './Landing.module.scss';
 import WalletDisplay from 'components/WalletDisplay';
 import FontAwesomeIcon from 'components/FontAwesomeIcon';
 import FaIcon from 'components/FontAwesomeIcon';
+import AppLink from 'components/AppLink';
 
 const Landing = () => {
   return (
@@ -17,7 +18,7 @@ const Landing = () => {
           <span>Turn your savings into exclusive experiences.</span>
           <div className={style.connect}>
             <WalletDisplay />
-            <button>Creator Signup</button>
+            <AppLink href='https://f85cwkcutw8.typeform.com/to/BHRTqBRM'>Creator Signup</AppLink>
           </div>
           <div className={style.content}>
             <div className={style.content__wrapper}>

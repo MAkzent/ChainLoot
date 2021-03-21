@@ -10,7 +10,7 @@
   @extend %row;
   margin-left: 2rem;
   margin-top: 2rem;
-  > button {
+  a {
     margin-left: 1.5rem;
     @extend %btn-secondary;
   }
