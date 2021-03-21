@@ -79,3 +79,72 @@
     font-size: 0.6rem;
   }
 }
+
+.modal {
+  @extend %col;
+  &__header {
+    font-size: 1.2rem;
+    padding: 1rem 0 2rem;
+    font-weight: 500;
+  }
+
+  &__details {
+    @extend %col;
+    margin: 2rem 0;
+    background-color: $color-codgray;
+    padding: 1rem 1.5rem;
+    border-radius: 0.25rem;
+  }
+  img {
+    height: 5rem;
+    width: auto;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+  }
+  &__amount {
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+
+  &__choose {
+    margin-top: 0rem;
+    font-weight: bold;
+  }
+
+  &__nfts {
+    @extend %row;
+    flex-wrap: wrap;
+    &__asset {
+      @extend %col;
+      margin: 1rem;
+      border: solid 2px rgba($color-hope, 0);
+      transition: ease-in-out;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      transition: 0.1s ease-in-out;
+      img {
+        height: 2rem;
+        width: auto;
+      }
+      small {
+        text-align: center;
+      }
+      &:hover {
+        border-color: rgba($color-hope, 0.2);
+      }
+      &--selected {
+        border-color: rgba($color-hope, 1);
+        &:hover {
+          border-color: rgba($color-hope, 1);
+        }
+      }
+    }
+  }
+  button {
+    margin-top: 2rem;
+    @extend %btn-primary;
+    @extend %btn-primary--hope;
+  }
+}

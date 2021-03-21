@@ -1,7 +1,5 @@
-import { ethers } from 'ethers';
 import { useWeb3React } from '@web3-react/core';
-import { useEffect, useState } from 'react';
-import cn from 'classnames';
+import { useState } from 'react';
 import styles from './wallet.module.scss';
 import { RampInstantSDK } from '@ramp-network/ramp-instant-sdk';
 import useWeb3Interaction from 'hooks/useWeb3Interaction';
@@ -75,7 +73,7 @@ const Wallet = () => {
           <button onClick={toggleBalance}>{showBalance ? 'Hide' : 'Show'}</button>
         </div>
         <div className={styles.balances__tokens}>
-          {showBalance && (
+          {showBalance ? (
             <>
               <div className={styles.balances__tokens__token}>
                 <span>DAI</span>
@@ -92,7 +90,7 @@ const Wallet = () => {
                 </div>
               </div>
             </>
-          )}
+          ) : null}
         </div>
         <div className={styles.nfts}>Your Memberships</div>
         <div className={styles.nfts__list}>

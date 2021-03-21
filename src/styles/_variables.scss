@@ -6,19 +6,21 @@ $battle-max-width: 1050px;
 $font-mono: 'Source Code Pro', monospace;
 
 $colors: (
-  white:        #fff,
-  wildsand:     #f5f4f4,
-  melrose:      #a7b2ff,
-  codgray:      #151515,
-  mineshaft:    #252525,
-  woodsmoke:    #38383a,
-  bittersweet:  #FF7675,
-  yellowsin:    #ffd369,
-  gossip:       #C9F6B4,
-  loot:         #55efc4,
-  spray:        #81ECEC,
-  thunder:      #33282E,
-  eggplant:     #563C55,
+  white: #fff,
+  wildsand: #f5f4f4,
+  melrose: #a7b2ff,
+  // melrose:      #DB8BFF,
+  codgray: #151515,
+  mineshaft: #252525,
+  woodsmoke: #38383a,
+  bittersweet: #ff7675,
+  yellowsin: #ffd369,
+  gossip: #c9f6b4,
+  loot: #55efc4,
+  spray: #81ecec,
+  thunder: #33282e,
+  eggplant: #563c55,
+  hope: #85f45e,
 );
 
 $color-white: map-get($colors, white);
@@ -34,6 +36,7 @@ $color-eggplant: map-get($colors, eggplant);
 $color-loot: map-get($colors, loot);
 $color-spray: map-get($colors, spray);
 $color-woodsmoke: map-get($colors, woodsmoke);
+$color-hope: map-get($colors, hope);
 
 // Lighten / Darken Variations
 $color-codgray--light: lighten($color-codgray, 10);
@@ -85,6 +88,15 @@ $color-melrose--30: rgba($color-melrose, 0.3);
   }
 }
 
+%btn-primary--hope {
+  background-color: $color-hope;
+  border-color: $color-hope;
+  &:hover {
+    background-color: lighten($color-hope, 3);
+    box-shadow: 0 1px 2px rgba($color-hope, 0.2);
+  }
+}
+
 %btn-secondary {
   display: inline-block;
   color: $color-melrose;
@@ -127,7 +139,9 @@ $color-melrose--30: rgba($color-melrose, 0.3);
   overflow: hidden;
   text-overflow: ellipsis;
   border: 1px solid rgba($color-melrose, 0);
-  &:focus, textarea:focus, select:focus{
+  &:focus,
+  textarea:focus,
+  select:focus {
     outline: none;
     border: 1px solid $color-melrose;
   }

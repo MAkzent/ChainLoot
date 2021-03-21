@@ -28,10 +28,10 @@ const customStyles = {
     right: 'auto',
     width: '42rem',
     minHeight: '14rem',
-    border: '1px solid',
+    border: '1px solid black',
     height: 'auto',
-    borderColor: '#a7b2ff',
-    background: '#151515',
+    boxShadow: '4px 4px 6px black',
+    background: '#38383a',
     borderRadius: '0.25rem',
   },
 };
