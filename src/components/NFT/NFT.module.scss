@@ -36,7 +36,7 @@
     border: 1px solid $color-melrose;
   }
   &--2 {
-    background-color: lighten($color-yellowsin, 15);
+    background-color: lighten($color-yellowsin, 20);
     border: 1px solid $color-yellowsin;
   }
   &__inner {
@@ -54,7 +54,7 @@
       background-color: $color-melrose;
     }
     &--2 {
-      background-color: $color-yellowsin;
+      background-color: darken($color-yellowsin, 5);
     }
   }
   &__text {
