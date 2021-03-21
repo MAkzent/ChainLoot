@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useWeb3React } from '@web3-react/core';
 import { connectorList, magic } from 'providers/Web3ConnectProvider/connectors';
-import { chainToString } from 'hooks/useWeb3';
 import Modal from 'components/Modal';
 import styles from './WalletDisplay.module.scss';
+import FaIcon from 'components/FontAwesomeIcon';
 
 const walletDisplay = () => {
   const [showWeb3ConnectModal, setShowWeb3ConnectModal] = useState(false);
@@ -18,6 +18,10 @@ const walletDisplay = () => {
       </button>
 
       <Modal onClose={() => setShowWeb3ConnectModal(false)} isOpen={showWeb3ConnectModal} header={'Connect Wallet'}>
+        <div className={styles.note}>
+          <FaIcon icon='farExclamationTriangle' />
+          <span>For Metamask: Please make sure you are connected to Kovan Testnet</span>
+        </div>
         <div className={styles.container}>
           {connectorList().map((connector, index) => (
             <button
@@ -40,7 +44,6 @@ const walletDisplay = () => {
           <div className={styles.input__header}>Email Signup</div>
           <div className={styles.input__wrapper}>
             <input
-              className='w-full border py-2 px-3 rounded text-black dark:text-white dark:bg-black'
               type='email'
               name='email'
               id='email'
@@ -57,8 +60,7 @@ const walletDisplay = () => {
                 } catch (e) {
                   console.error(e);
                 }
-              }}
-              className='w-full sm:w-auto mt-2 sm:mt-0 text-sm border px-3 py-2 rounded hover:bg-black hover:text-white dark:hover:bg-gray dark:hover:text-black'>
+              }}>
               {loading ? '...' : 'Login'}
             </button>
           </div>

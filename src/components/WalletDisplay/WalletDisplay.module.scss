@@ -32,3 +32,15 @@
     }
   }
 }
+
+.note {
+  @extend %row;
+  border: 1px solid $color-codgray;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  color: $color-yellowsin;
+  border-radius: 0.5rem;
+  svg {
+    margin-right: 1rem;
+  }
+}
