@@ -18,6 +18,14 @@ const index = ({ experience }: IExperience) => {
   };
   return (
     <div className={styles.experience}>
+      {experience.maxMinted ? (
+        <div className={styles.limited}>
+          <span>
+            {experience.minted}/{experience.maxMinted}
+          </span>
+          <small>Claimed</small>
+        </div>
+      ) : null}
       <div className={styles.experience__title}>{experience.title}</div>
       <img src={experience.image} />
       <div className={styles.experience__description}>{experience.description}</div>

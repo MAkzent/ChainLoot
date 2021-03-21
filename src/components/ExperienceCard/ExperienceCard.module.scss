@@ -2,6 +2,7 @@
 
 .experience {
   @extend %col;
+  position: relative;
   justify-content: space-between;
   background-color: $color-woodsmoke;
   border-radius: 0.5rem;
@@ -58,5 +59,23 @@
     top: 0;
     left: 0;
     z-index: 3;
+  }
+}
+
+.limited {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 1rem;
+  background-color: $color-yellowsin;
+  color: black;
+  text-align: center;
+  span {
+    font-weight: 500;
+  }
+  small {
+    display: block;
+    font-size: 0.6rem;
   }
 }
