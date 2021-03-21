@@ -13,6 +13,8 @@ const Memberships = () => {
   const { mintChargedParticle, daiApproved, approveDai } = useWeb3Interaction();
   const [showApproveModal, setShowApproveModal] = useState(false);
 
+  const MAX_SUPPLIES = [1000, 200, 50];
+
   const handleBuy = async (id: particleId) => {
     if (!daiApproved) {
       return setShowApproveModal(true);
@@ -39,7 +41,7 @@ const Memberships = () => {
 
   return (
     <div>
-      <div className={styles.headline}>Membership Tiers - Summer Season 2021</div>
+      <div className={styles.headline}>Membership Tiers - Summer 2021</div>
       <div className={styles.tiers}>
         {TIERS.map((tier, index) => (
           <div className={cn([styles.tiers__tier, styles[`tiers__tier--${index}`]])} key={index}>
@@ -48,15 +50,14 @@ const Memberships = () => {
               <p>{tier.name}</p>
               <span>$ {tier.price}</span>
             </div>
-            {/* <div className={styles.perks}>
-              <span>- Discord Role</span>
-              <span>- Shop Discounts</span>
-              <span>- Offline Experiences</span>
-            </div> */}
+            <div className={styles.perks}>
+              <span>{MAX_SUPPLIES[index].toLocaleString()}</span>
+              <span>Max Supply</span>
+            </div>
             <div className={styles.xp}>
               <div className={styles.xp__bars}>
-                {Array.from(Array(Math.floor(tier.xp / 1000) + 1).keys()).map(index => (
-                  <div className={styles.xp__bar} key={index}></div>
+                {Array.from(Array(Math.floor(tier.xp / 1000) + 1).keys()).map(barIndex => (
+                  <div className={cn([styles.xp__bar, [styles[`xp__bar--${index}`]]])} key={barIndex}></div>
                 ))}
               </div>
               <span>{tier.xp.toLocaleString()} XP / month</span>

@@ -1,26 +1,26 @@
 {
   "0": {
     "id": 0,
-    "name": "Common",
-    "image": "/images/mask-0.png",
+    "name": "Rare",
+    "image": "/images/member-0.gif",
     "price": 50,
     "xp": 300,
-    "uri": "https://ipfs.io/ipfs/QmbdK4gyfowkSJtcooaUWLbvXmuT3MmNAwkmzD1TtKJ9Hw"
+    "uri": "https://ipfs.io/ipfs/QmePkzp5CeMrV1bTzUMCgGuXUweLXUoYsVKSCi2jbw2z4k"
   },
   "1": {
     "id": 1,
-    "name": "Epic",
-    "image": "/images/mask-1.png",
+    "name": "Super Rare",
+    "image": "/images/member-1.gif",
     "price": 200,
     "xp": 2000,
-    "uri": "https://ipfs.io/ipfs/QmbdK4gyfowkSJtcooaUWLbvXmuT3MmNAwkmzD1TtKJ9Hw"
+    "uri": "https://ipfs.io/ipfs/QmSWQLe6DFGm8EJ9VtJFH2QyUzi46RH7pDkuCoVQdhF5qT"
   },
   "2": {
     "id": 2,
     "name": "Legendary",
-    "image": "/images/mask-2.png",
+    "image": "/images/member-2.gif",
     "price": 500,
     "xp": 5000,
-    "uri": "https://ipfs.io/ipfs/QmbdK4gyfowkSJtcooaUWLbvXmuT3MmNAwkmzD1TtKJ9Hw"
+    "uri": "https://ipfs.io/ipfs/QmS626EJFpyKMprTS2why971k7DH2G64yZcKC6idxoCB5E"
   }
 }

@@ -10,14 +10,14 @@ const Experiences = () => {
 
   const renderSeeAll = () => {
     return (
-      <AppLink href='/memberships' className={styles.placeholder}>
-        Show All Memberships
+      <AppLink href='/wallet' className={styles.placeholder}>
+        Show My Memberships
       </AppLink>
     );
   };
   return (
     <div>
-      <div className={styles.headline}>Your Experiences</div>
+      <div className={styles.headline}>Redeem XP for Experiences</div>
       <div className={styles.nfts__list}>
         {myAssets.length ? (
           <div className={styles.row}>

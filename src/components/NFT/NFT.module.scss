@@ -23,19 +23,39 @@
 
 .xp {
   border-radius: 0.5rem;
-  background-color: lighten($color-yellowsin, 20);
   position: relative;
-  height: 1.8rem;
+  height: 2rem;
   width: 12rem;
+
+  &--0 {
+    background-color: lighten($color-spray, 15);
+    border: 1px solid $color-spray;
+  }
+  &--1 {
+    background-color: lighten($color-melrose, 10);
+    border: 1px solid $color-melrose;
+  }
+  &--2 {
+    background-color: lighten($color-yellowsin, 15);
+    border: 1px solid $color-yellowsin;
+  }
   &__inner {
     position: absolute;
     top: 0;
     left: 0;
     border-radius: 0.5rem;
     height: 100%;
-    width: 80%; // change
     background-color: $color-yellowsin;
     z-index: 2;
+    &--0 {
+      background-color: $color-spray;
+    }
+    &--1 {
+      background-color: $color-melrose;
+    }
+    &--2 {
+      background-color: $color-yellowsin;
+    }
   }
   &__text {
     color: black;

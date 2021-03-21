@@ -20,11 +20,11 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <React.Fragment>
       <Head>
-        <title>⚡ Chain Loot</title>
+        <title>⚡ LootVault</title>
         <link rel='icon' href='/favicon.ico' />
         <meta property='og:url' content='https://blockloot.vercel.app/' />
         <meta property='og:type' content='website' />
-        <meta property='og:title' content='⛓️ Chain Loot' />
+        <meta property='og:title' content='⚡ LootVault' />
         <meta name='twitter:card' content='summary' />
         <meta name='twitter:description' content='Reinventing Fan Memberships with NFTs and DeFi.' />
         <meta name='twitter:image' content='images/mask-2.png' />

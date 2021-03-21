@@ -38,20 +38,20 @@
         animation: pulseCommon 2s infinite;
       }
     }
-    &--1 {
+    &--2 {
       p {
         color: $color-yellowsin;
       }
       img {
-        animation: pulseEpic 2s infinite;
+        animation: pulseLegen 2s infinite;
       }
     }
-    &--2 {
+    &--1 {
       p {
         color: $color-melrose;
       }
       img {
-        animation: pulseLegen 2s infinite;
+        animation: pulseEpic 2s infinite;
       }
     }
 
@@ -69,12 +69,12 @@
 }
 
 .perks {
-  margin-top: 1rem;
+  @extend %row;
+  justify-content: space-between;
+  margin-top: 0.25rem;
   background-color: rgba($color-codgray, 0.5);
   padding: 0.75rem 1rem;
   border-radius: 0.25rem;
-  display: grid;
-  grid-gap: 0.5rem;
   font-size: 0.8rem;
   font-family: $font-mono;
 }
@@ -98,6 +98,12 @@
     height: 0.7rem;
     border-left: 3px solid $color-melrose;
     margin-right: 0.25rem;
+    &--0 {
+      border-color: $color-spray;
+    }
+    &--2 {
+      border-color: $color-yellowsin;
+    }
   }
 }
 
@@ -165,7 +171,7 @@
     box-shadow: 0 0 0 0 rgba($color-spray, 0);
   }
 }
-@keyframes pulseEpic {
+@keyframes pulseLegen {
   0% {
     box-shadow: 0 0 0 0 rgba($color-yellowsin, 0.4);
   }
@@ -178,7 +184,7 @@
     box-shadow: 0 0 0 0 rgba($color-yellowsin, 0);
   }
 }
-@keyframes pulseLegen {
+@keyframes pulseEpic {
   0% {
     box-shadow: 0 0 0 0 rgba($color-melrose, 0.4);
   }

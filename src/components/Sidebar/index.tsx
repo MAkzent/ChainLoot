@@ -68,7 +68,7 @@ const Sidebar = () => {
         <div className={style.sidebar__inner__top}>
           <div className={style.logo}>
             <FontAwesomeIcon icon='fasGem' />
-            <span>Chain Loot</span>
+            <span>LootVault</span>
           </div>
           <div className={style.links}>
             {MAIN_ROUTES.map(route => (
@@ -98,6 +98,10 @@ const Sidebar = () => {
               </div>
             </div>
           )}
+          <div className={style.creator}>
+            <img src='/images/waffle.png' />
+            <span>MrRoflWaffles</span>
+          </div>
           {/* <AppLink
             className={cn([style.links__link, style.noOpacity])}
             href={'https://www.notion.so/niftyarena/Nifty-Arena-bfcc39478cab46399d44e9a1c5940b85'}>

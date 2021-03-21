@@ -120,3 +120,17 @@
 .noOpacity {
   opacity: 1;
 }
+
+.creator {
+  border: 2px solid $color-thunder;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  @extend %row;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: bold;
+  img {
+    height: 1.4rem;
+    width: auto;
+  }
+}

@@ -13,7 +13,7 @@ const Wallet = () => {
 
   const buyDai = () => {
     new RampInstantSDK({
-      hostAppName: 'Chain Loot',
+      hostAppName: 'LootVault',
       hostLogoUrl: 'https://i.pinimg.com/originals/8b/c5/14/8bc51478525c42e2a556ee5fec169a1d.png',
       swapAsset: 'DAI',
       userAddress: `${account}`,
@@ -22,7 +22,7 @@ const Wallet = () => {
 
   const buyEth = () => {
     new RampInstantSDK({
-      hostAppName: 'Chain Loot',
+      hostAppName: 'LootVault',
       hostLogoUrl: 'https://i.pinimg.com/originals/8b/c5/14/8bc51478525c42e2a556ee5fec169a1d.png',
       swapAsset: 'ETH',
       userAddress: `${account}`,
@@ -32,37 +32,6 @@ const Wallet = () => {
   const toggleBalance = () => {
     showBalance ? setShowBalance(false) : setShowBalance(true);
   };
-
-  // const MEMBERSHIPS = [
-  //   {
-  //     name: 'Common',
-  //     image: '/images/mask-0.png',
-  //     price: '0.1',
-  //     xp: 500,
-  //     currentXp: 200,
-  //   },
-  //   {
-  //     name: 'Common',
-  //     image: '/images/mask-0.png',
-  //     price: '0.1',
-  //     xp: 500,
-  //     currentXp: 150,
-  //   },
-  //   {
-  //     name: 'Common',
-  //     image: '/images/mask-0.png',
-  //     price: '0.1',
-  //     xp: 500,
-  //     currentXp: 240,
-  //   },
-  //   {
-  //     name: 'Legendary',
-  //     image: '/images/mask-2.png',
-  //     price: '1',
-  //     xp: 5000,
-  //     currentXp: 2400,
-  //   },
-  // ];
 
   return (
     <div>
