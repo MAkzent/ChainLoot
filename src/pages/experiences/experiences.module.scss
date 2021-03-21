@@ -1,0 +1,47 @@
+@import 'styles/_variables.scss';
+
+.headline {
+  padding: 2rem 0;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.nfts {
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding: 2rem 0 1rem;
+
+  &__list {
+    grid-gap: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    &__buy {
+      border-radius: 0.3rem;
+      background-color: $color-codgray;
+      padding: 1rem 1.25rem;
+      span {
+        font-style: italic;
+      }
+      a {
+        margin-left: 1rem;
+        @extend %btn-primary;
+      }
+    }
+  }
+}
+
+.placeholder {
+  margin-left: 2rem;
+  @extend %btn-primary;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem 5rem;
+}

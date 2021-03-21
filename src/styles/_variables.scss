@@ -11,6 +11,7 @@ $colors: (
   melrose:      #a7b2ff,
   codgray:      #151515,
   mineshaft:    #252525,
+  woodsmoke:    #38383a,
   bittersweet:  #FF7675,
   yellowsin:    #ffd369,
   gossip:       #C9F6B4,
@@ -32,6 +33,7 @@ $color-thunder: map-get($colors, thunder);
 $color-eggplant: map-get($colors, eggplant);
 $color-loot: map-get($colors, loot);
 $color-spray: map-get($colors, spray);
+$color-woodsmoke: map-get($colors, woodsmoke);
 
 // Lighten / Darken Variations
 $color-codgray--light: lighten($color-codgray, 10);

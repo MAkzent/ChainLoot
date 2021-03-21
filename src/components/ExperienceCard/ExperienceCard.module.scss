@@ -1,0 +1,62 @@
+@import 'styles/_variables.scss';
+
+.experience {
+  @extend %col;
+  justify-content: space-between;
+  background-color: $color-woodsmoke;
+  border-radius: 0.5rem;
+  transition: 0.2s ease-in-out;
+  padding: 1.25rem 1.5rem;
+  height: 100%;
+  box-shadow: 4px 4px 6px black;
+  &__title {
+    font-weight: 500;
+  }
+  img {
+    height: 6rem;
+    width: auto;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+  }
+  &__description {
+    position: block;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    margin: 0.5rem 0 1.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  button {
+    margin-top: auto;
+    @extend %btn-primary;
+  }
+}
+
+.xp {
+  border-radius: 0.5rem;
+  background-color: lighten($color-melrose, 7);
+  position: relative;
+  height: 2rem;
+  width: 14rem;
+  &__inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0.5rem;
+    height: 100%;
+    background-color: $color-melrose;
+    z-index: 2;
+  }
+  &__text {
+    color: black;
+    text-align: center;
+    width: 100%;
+    font-family: $font-mono;
+    position: absolute;
+    padding: 0.5rem 1rem;
+    top: 0;
+    left: 0;
+    z-index: 3;
+  }
+}

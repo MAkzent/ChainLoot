@@ -68,7 +68,6 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
 
   const loadAssets = async (account: string) => {
     const assets: any = await getData(account);
-
     setMyAssets(assets);
   };
 

@@ -1,3 +1,52 @@
 {
-  "list": [{}, {}, {}, {}]
+  "list": [
+    {
+      "title": "Discord Access",
+      "description": "Get access to MrRoflWaffles exclusive Discord Channel. You will gain access to secret channels and receive a special Discord role.",
+      "image": "/images/exp_discord.png",
+      "cost": 50,
+      "minted": 0,
+      "maxMinted": 0
+    },
+    {
+      "title": "Signed T-Shirt",
+      "description": "Get your new favorite Tee! A personally signed T-Shirt shipped right to your doorstep.",
+      "image": "/images/exp_tshirt.png",
+      "cost": 1000,
+      "minted": 12,
+      "maxMinted": 50
+    },
+    {
+      "title": "Legendary Collectable",
+      "description": "This extremely rare MrRoflWaffles moment NFT will only ever exist 5 times. Get your hands on that legendary gameplay moment!",
+      "image": "/images/exp_legend_collectible.png",
+      "cost": 12000,
+      "minted": 1,
+      "maxMinted": 5
+    },
+    {
+      "title": "Exclusive Content",
+      "description": "Access to never released behind the scenes content, special tutorials, and gameplay secrets.",
+      "image": "/images/exp_content.png",
+      "cost": 250,
+      "minted": 0,
+      "maxMinted": 0
+    },
+    {
+      "title": "Get a Shoutout",
+      "description": "Get a 30 second custom video from MrRoflWaffles. Surprise your friends or treat yourself!",
+      "image": "/images/exp_shoutout.png",
+      "cost": 2000,
+      "minted": 0,
+      "maxMinted": 0
+    },
+    {
+      "title": "Special Surfshark Discount",
+      "description": "Receive an extra 30% off your 1 year Surfshark subscription. Only redeemable once per account.",
+      "image": "/images/exp_surfshark.png",
+      "cost": 100,
+      "minted": 0,
+      "maxMinted": 0
+    }
+  ]
 }
