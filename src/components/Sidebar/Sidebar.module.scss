@@ -31,13 +31,12 @@
     justify-content: center;
   }
 
-  svg {
-    color: $color-melrose;
-    height: 1.4rem;
-    width: 1.4rem;
+  img {
+    height: 2rem;
+    width: auto;
   }
 
-  svg + span {
+  img + span {
     margin-left: 0.5rem;
   }
 }

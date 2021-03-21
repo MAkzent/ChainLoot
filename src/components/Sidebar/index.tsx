@@ -67,7 +67,7 @@ const Sidebar = () => {
       <div className={style.sidebar__inner}>
         <div className={style.sidebar__inner__top}>
           <div className={style.logo}>
-            <FontAwesomeIcon icon='fasGem' />
+            <img src='/images/logo.png' />
             <span>LootVault</span>
           </div>
           <div className={style.links}>

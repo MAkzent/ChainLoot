@@ -12,8 +12,7 @@ const Landing = () => {
         </video>
         <div className={style.hero__wrapper}>
           <div className={style.header}>
-            <FontAwesomeIcon icon='fasGem' />
-            LootVault
+            <img src='/images/logo_text.png'></img>
           </div>
           <span>Turn your savings into exclusive experiences.</span>
           <div className={style.connect}>
