@@ -3,18 +3,95 @@
 .container {
   @extend %col;
   max-width: $body-max-width;
-  margin: 4rem auto;
+  margin: auto;
 }
 
 .connect {
+  @extend %row;
   margin-top: 2rem;
+  > button {
+    margin-left: 1.5rem;
+    @extend %btn-secondary;
+  }
 }
 
 .header {
   @extend %row;
-  font-size: 1.15rem;
+  font-size: 1.8rem;
   font-weight: 500;
   svg {
     margin-right: 0.5rem;
+  }
+  margin-bottom: 0.5rem;
+}
+
+.hero {
+  position: relative;
+  height: 20vh;
+  width: 100vw;
+  video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+  &__wrapper {
+    @extend %col;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: rgba(black, 0.9);
+  }
+}
+
+.content {
+  margin: 4rem 4rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+
+  &__wrapper {
+    @extend %col;
+    position: relative;
+    justify-content: space-between;
+    border-radius: 0.5rem;
+    border: 1px solid $color-melrose--30;
+    padding: 1rem 1.5rem;
+    background-color: $color-mineshaft;
+
+    span {
+      margin: 1rem 0.5rem 0;
+      text-align: center;
+      line-height: 1.6rem;
+      // font-weight: 300;
+      font-size: 0.9rem;
+    }
+
+    svg {
+      height: 2.8rem;
+      width: 2.8rem;
+    }
+
+    img {
+      height: 1.6rem;
+      margin-top: 0.5rem;
+      width: auto;
+    }
+
+    &__number {
+      position: absolute;
+      padding: 0.5rem 0.75rem;
+      right: -1rem;
+      top: -1rem;
+      font-size: 0.9rem;
+      font-weight: bold;
+      border-radius: 0.5rem;
+      background-color: $color-yellowsin;
+      color: $color-codgray;
+    }
   }
 }

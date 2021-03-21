@@ -15,9 +15,11 @@ import { faHeart as fasHeart } from '@fortawesome/pro-solid-svg-icons/faHeart';
 import { faHome as fasHome } from '@fortawesome/pro-solid-svg-icons/faHome';
 import { faInfoSquare as fasInfoSquare } from '@fortawesome/pro-solid-svg-icons/faInfoSquare';
 import { faLightbulb as fasLightbulb } from '@fortawesome/pro-solid-svg-icons/faLightbulb';
+import { faMoneyCheckAlt as fasMoneyCheckAlt } from '@fortawesome/pro-solid-svg-icons/faMoneyCheckAlt';
 import { faSword as fasSword } from '@fortawesome/pro-solid-svg-icons/faSword';
 import { faStars as fasStars } from '@fortawesome/pro-solid-svg-icons/faStars';
 import { faUser as fasUser } from '@fortawesome/pro-solid-svg-icons/faUser';
+import { faUndoAlt as fasUndoAlt } from '@fortawesome/pro-solid-svg-icons/faUndoAlt';
 
 // far
 import { faBox as farBox } from '@fortawesome/pro-regular-svg-icons/faBox';
@@ -49,9 +51,11 @@ export default {
   fasHome,
   fasInfoSquare,
   fasLightbulb,
+  fasMoneyCheckAlt,
   fasSword,
   fasStars,
   fasUser,
+  fasUndoAlt,
   farBox,
   farTimes,
   farExclamationTriangle,
