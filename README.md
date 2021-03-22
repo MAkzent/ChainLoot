@@ -31,7 +31,9 @@ yarn install
 
 ## How to use
 
-- Make sure to be connected to Kovan
+DEMO: https://lootvault.vercel.app/
+
+- Make sure to be connected to Kovan Testnet
 - You can use these faucets to get Kovan ETH and DAI (Aave):
   - ETH: https://gitter.im/kovan-testnet/faucet (drop your address in the chat)
   - DAI: https://testnet.aave.com/faucet/DAI
